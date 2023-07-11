@@ -1,5 +1,5 @@
 <script lang="ts">
-  import './header.css';
+  import './header.scss';
   import Button from './Button.svelte';
 
   import { createEventDispatcher } from 'svelte';
