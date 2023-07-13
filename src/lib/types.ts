@@ -89,3 +89,10 @@ export type SkillsPageParams = PageWithSearchParams<Skill>;
 export interface ResumePageParams extends PageParams {
 	item: string;
 }
+
+export type ColorType = "hex" | "hsl" | "rgb";
+
+export const HEX = "hex";
+export const HSL = "hsl";
+export const RGB = "rgb";
+export const UNKNOWN = "unknown";
