@@ -12,7 +12,7 @@ import {
 } from './types';
 import { Icons } from './utils';
 
-export const TITLE_SUFFIX = 'Slick template with Svelte';
+export const TITLE_SUFFIX = "Sahil's Portfolio";
 
 export const NavBar = {
 	home: 'Home',
@@ -48,31 +48,26 @@ export const HOME: HomePageParams = {
 	description:
 		'In the vast realm of web development, I am a passionate dream-weaver, seamlessly weaving together front-end and back-end technologies. Utilizing bleeding-edge technologies, I craft immersive digital experiences. Collaborating with fellow developers, I pour my heart into every aspect, creating seamless and captivating web applications.',
 	links: [
-		{ platform: Platform.GitHub, link: 'https://github.com/' },
+		{ 	
+			platform: Platform.GitHub, 
+			link: 'https://github.com/sahil-bhanvadiya/' 
+		},
 		{
 			platform: Platform.Linkedin,
-			link: 'https://www.linkedin.com/'
+			link: 'https://www.linkedin.com/in/sahil-bhanvadiya/'
 		},
 		{
 			platform: Platform.Twitter,
-			link: 'https://twitter.com/'
+			link: 'https://twitter.com/sahil_bhanvadia/'
 		},
 		{
 			platform: Platform.StackOverflow,
-			link: 'https://stackoverflow.com/'
+			link: 'https://stackoverflow.com/users/22149156/sahil-bhanvadiya/'
 		},
 		{
 			platform: Platform.Email,
-			link: 'riadh-adrani@hotmail.fr'
+			link: 'sahil.bhanvadiya.dev@gmail.com'
 		},
-		{
-			platform: Platform.Youtube,
-			link: 'https://www.youtube.com'
-		},
-		{
-			platform: Platform.Facebook,
-			link: 'https://www.facebook.com'
-		}
 	]
 };
 
