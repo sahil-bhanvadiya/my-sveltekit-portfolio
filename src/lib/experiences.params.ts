@@ -14,7 +14,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		name: 'Freelancer',
 		color: '#ffffff',
 		links: [],
-		logo: ''
+		logo: 'aws'
 	},
 	{
 		slug: 'software-freelance-junior',
@@ -28,7 +28,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		name: 'Junior Freelancer',
 		color: '#ffffff',
 		links: [],
-		logo: ''
+		logo: 'aws'
 	}
 ];
 
