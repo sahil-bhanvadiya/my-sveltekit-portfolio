@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { countMonths, getMonthName } from '../../../lib/utils/helpers';
-	import Chip from '../Chip/Chip.svelte';
+	// import { countMonths, getMonthName } from '../../../lib/utils/helpers';
+	// import Chip from '../Chip/Chip.svelte';
 	import Card from '../Card/Card.svelte';
 	import CardTitle from '../Card/CardTitle.svelte';
 	import CardLink from '../Card/CardLink.svelte';
@@ -11,12 +11,12 @@
 	import { getAssetURL } from '../../../lib/data/assets';
 
 	export let project: Project;
-	$: months = countMonths(project.period.from, project.period.to);
-	$: period = `${months} month${months > 1 ? 's' : ''}`;
-	$: from = `${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`;
-	$: to = project.period.to
-		? `${getMonthName(project.period.to.getMonth())} ${project.period.to.getFullYear()}`
-		: 'now';
+	// $: months = countMonths(project.period.from, project.period.to);
+	// $: period = `${months} month${months > 1 ? 's' : ''}`;
+	// $: from = `${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`;
+	// $: to = project.period.to
+	// 	? `${getMonthName(project.period.to.getMonth())} ${project.period.to.getFullYear()}`
+	// 	: 'now';
 </script>
 
 <Card color={project.color}>
@@ -32,15 +32,15 @@
 	<CardDivider />
 	<div class="project-card-mid">
 		<p class="project-card-type">{project.type}</p>
-		<p class="project-card-period">{period}</p>
+		<!-- <p class="project-card-period">{period}</p> -->
 	</div>
 	<p class="project-card-description">{project.description}</p>
-	<div class="project-card-bottom">
-		<Chip label={from} />
+	<!-- <div class="project-card-bottom"> -->
+		<!-- <Chip label={from} />
 		{#if from !== to}
 			<Chip label={to} />
-		{/if}
-	</div>
+		{/if} -->
+	<!-- </div> -->
 	<CardDivider />
 	<div class="project-card-technologies">
 		{#each project.skills as tech}
