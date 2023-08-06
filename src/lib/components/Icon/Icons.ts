@@ -1,6 +1,6 @@
 import { Icons } from '../../../lib/utils';
 
-export const viewBox = (icon: Icons) => {
+export const viewBox = (icon: Icons): string => {
 	if (icon === Icons.Youtube) return '0 0 461.001 461.001';
 
 	if (icon === Icons.Facebook) return '0 0 408.788 408.788';

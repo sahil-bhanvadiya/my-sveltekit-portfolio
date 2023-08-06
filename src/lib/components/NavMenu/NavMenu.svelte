@@ -21,6 +21,8 @@
 		{ title: NavBar.career, to: '/experience', icon: Icons.Job },
 		{ title: NavBar.resume, to: '/resume', icon: Icons.Resume }
 	];
+	const toggleThemeHandler = () => toggleTheme();
+	
 </script>
 
 <div class="nav-menu">
@@ -49,7 +51,7 @@
 			</a>
 			<button
 				class="hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
-				on:click={toggleTheme}
+				on:click={toggleThemeHandler}
 			>
 				{#if $theme}
 					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 32 32"
