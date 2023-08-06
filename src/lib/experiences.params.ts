@@ -3,32 +3,50 @@ import { ContractType, type Experience } from './types';
 
 const MY_EXPERIENCES: Array<Experience> = [
 	{
-		slug: 'software-freelance',
-		company: 'Self-employed',
-		description: 'Creating awesome applications for customers.',
-		contract: ContractType.Freelance,
+		slug: 'software-engineer-seaflux',
+		company: 'Seaflux',
+		description: '',
+		contract: ContractType.FullTime,
 		type: 'Software Development',
-		location: 'Home',
-		period: { from: new Date() },
-		skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
-		name: 'Freelancer',
+		location: 'On Site',
+		period: { from: new Date('2022-01-01') },
+		skills: getSkills(
+			'reactjs',
+			'redux',
+			'angular',
+			'nextjs',
+			'ts',
+			'sass',
+			'css',
+			'html',
+			'js',
+			'aws',
+			'git',
+			'bootstrap',
+			'mui',
+			'node',
+			'express',
+			'postman',
+			'jira'
+		),
+		name: 'Software Engineer',
 		color: '#ffffff',
 		links: [],
-		logo: 'aws'
+		logo: 'seaflux'
 	},
 	{
-		slug: 'software-freelance-junior',
-		company: 'Self-employed',
-		description: 'Creating awesome applications for customers.',
-		contract: ContractType.Freelance,
+		slug: 'web-developer-intern',
+		company: 'CreArt Solutions',
+		description: '',
+		contract: ContractType.Internship,
 		type: 'Software Development',
 		location: 'Home',
-		period: { from: new Date() },
-		skills: getSkills('css', 'html', 'js'),
-		name: 'Junior Freelancer',
+		period: { from: new Date('2021-05-01'), to: new Date('2021-06-01') },
+		skills: getSkills('css', 'html', 'js', 'reactjs'),
+		name: 'Web Developer Internship',
 		color: '#ffffff',
 		links: [],
-		logo: 'aws'
+		logo: 'creart'
 	}
 ];
 
