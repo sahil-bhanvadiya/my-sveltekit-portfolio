@@ -14,7 +14,7 @@
 	const onSearch = (e: CustomEvent<{ search: string }>) => {
 		const query = e.detail.search;
 
-		if (query && query !== "") {
+		if (query && query !== '') {
 			result = items;
 		}
 

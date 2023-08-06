@@ -12,15 +12,15 @@
 	export let bgImg: string | undefined = undefined;
 
 	function normalizeColorToHSLOrThrow(color: string): string {
-  const rgb = convertColor(color, "hsl");
-  const type = getColorType(rgb);
+		const rgb = convertColor(color, 'hsl');
+		const type = getColorType(rgb);
 
-  if (type === "unknown") {
-    throw "unable to specify (color) type, maybe it is badly formatted ?";
-  }
+		if (type === 'unknown') {
+			throw 'unable to specify (color) type, maybe it is badly formatted ?';
+		}
 
-  return rgb;
-}
+		return rgb;
+	}
 	$: borderColor = changeColorOpacity(color, 0.5);
 	$: dropColor = changeColorOpacity(color, 0.15);
 	$: bgColor = changeColorOpacity(color, 0.01);

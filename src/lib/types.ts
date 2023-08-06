@@ -90,9 +90,9 @@ export interface ResumePageParams extends PageParams {
 	item: string;
 }
 
-export type ColorType = "hex" | "hsl" | "rgb";
+export type ColorType = 'hex' | 'hsl' | 'rgb';
 
-export const HEX = "hex";
-export const HSL = "hsl";
-export const RGB = "rgb";
-export const UNKNOWN = "unknown";
+export const HEX = 'hex';
+export const HSL = 'hsl';
+export const RGB = 'rgb';
+export const UNKNOWN = 'unknown';

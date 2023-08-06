@@ -48,9 +48,9 @@ export const HOME: HomePageParams = {
 	description:
 		'In the vast realm of web development, I am a passionate dream-weaver, seamlessly weaving together front-end and back-end technologies. Utilizing bleeding-edge technologies, I craft immersive digital experiences. Collaborating with fellow developers, I pour my heart into every aspect, creating seamless and captivating web applications.',
 	links: [
-		{ 	
-			platform: Platform.GitHub, 
-			link: 'https://github.com/sahil-bhanvadiya/' 
+		{
+			platform: Platform.GitHub,
+			link: 'https://github.com/sahil-bhanvadiya/'
 		},
 		{
 			platform: Platform.Linkedin,
@@ -67,7 +67,7 @@ export const HOME: HomePageParams = {
 		{
 			platform: Platform.Email,
 			link: 'sahil.bhanvadiya.dev@gmail.com'
-		},
+		}
 	]
 };
 

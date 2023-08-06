@@ -56,25 +56,25 @@ export const useSocialMedia = (media: any) => {
 };
 
 export const normalizeColorToHSLOrThrow = (color: string): string => {
-	const rgb = convertColor(color, "hsl");
+	const rgb = convertColor(color, 'hsl');
 	const type = getColorType(rgb);
 
-	if (type === "unknown") {
-		throw "unable to specify (color) type, maybe it is badly formatted ?";
+	if (type === 'unknown') {
+		throw 'unable to specify (color) type, maybe it is badly formatted ?';
 	}
 
 	return rgb;
-}
+};
 
 export const changeColorOpacity = (color: string, opacity: number, type?: ColorType) => {
 	const c = normalizeColorToHSLOrThrow(color);
 
-	if (!isInInterval(0, opacity, 1)) throw "(opacity) should be a number between 0 and 1.";
+	if (!isInInterval(0, opacity, 1)) throw '(opacity) should be a number between 0 and 1.';
 
 	const [h, s, l] = extractDataFromHSL(c);
 
-	return convertColor(hsla(h, s, l, opacity), type ?? "hex");
-}
+	return convertColor(hsla(h, s, l, opacity), type ?? 'hex');
+};
 
 export const convertColor = (color: string, to: ColorType): string => {
 	const type = getColorType(color);
@@ -132,11 +132,11 @@ export const convertColor = (color: string, to: ColorType): string => {
 	}
 
 	return color;
-}
+};
 
-export const getColorType = (color: string): ColorType | "unknown" => {
+export const getColorType = (color: string): ColorType | 'unknown' => {
 	return isHexColor(color) ? HEX : isHslColor(color) ? HSL : isRgbColor(color) ? RGB : UNKNOWN;
-}
+};
 
 export const isHexColor = (color: string): boolean => {
 	if (color == '' || color == null) return false;
@@ -146,7 +146,7 @@ export const isHexColor = (color: string): boolean => {
 	const eight = /^#[0-9|a|A|b|B|c|C|d|D|e|E|f|F]{8}$/;
 
 	return three.test(color) || six.test(color) || eight.test(color);
-}
+};
 
 export const isHslColor = (color: string): boolean => {
 	if (isBlank(color)) {
@@ -176,41 +176,41 @@ export const isHslColor = (color: string): boolean => {
 	}
 
 	return false;
-}
+};
 
 export const extractDataFromHSL = (color: string): number[] => {
 	if (isHslaForm(color)) {
 		return color
 			.slice(5, -1)
-			.replace("%", "")
-			.replace("deg", "")
-			.replace("/", "")
-			.replace("  ", " ")
-			.split(" ")
+			.replace('%', '')
+			.replace('deg', '')
+			.replace('/', '')
+			.replace('  ', ' ')
+			.split(' ')
 			.map((i) => parseFloat(i.trim()));
 	}
 
 	if (isHslForm(color)) {
 		return color
 			.slice(4, -1)
-			.replace("%", "")
-			.replace("deg", "")
-			.replace("/", "")
-			.split(" ")
+			.replace('%', '')
+			.replace('deg', '')
+			.replace('/', '')
+			.split(' ')
 			.map((i) => parseFloat(i.trim()));
 	}
 
-	throw "(color) is not of a HSL/HSLA form.";
-}
+	throw '(color) is not of a HSL/HSLA form.';
+};
 
 export const hsla = (h: number, s: number, l: number, a = 1): string => {
-	if (!isInInterval(0, h, 360)) throw "(hue) should be a number between 0 and 360";
-	if (!isInInterval(0, l, 100)) throw "(lightness) should be a number between 0 and 100";
-	if (!isInInterval(0, s, 100)) throw "(saturation) should be a number between 0 and 100";
-	if (!isInInterval(0, a, 1)) throw "(alpha) should be a number between 0 and 1";
+	if (!isInInterval(0, h, 360)) throw '(hue) should be a number between 0 and 360';
+	if (!isInInterval(0, l, 100)) throw '(lightness) should be a number between 0 and 100';
+	if (!isInInterval(0, s, 100)) throw '(saturation) should be a number between 0 and 100';
+	if (!isInInterval(0, a, 1)) throw '(alpha) should be a number between 0 and 1';
 
 	return `hsla(${h}deg ${s}% ${l}% / ${a})`;
-}
+};
 
 export const HSL_REGEX =
 	/^hsl\((\d{1,3})(\.\d+){0,1}deg (\d{1,3})(\.\d+){0,1}% (\d{1,3})(\.\d+){0,1}%\)$/;
@@ -218,35 +218,34 @@ export const HSL_REGEX =
 export const HSLA_REGEX =
 	/^hsla\((\d{1,3})(\.\d+){0,1}deg (\d{1,3})(\.\d+){0,1}% (\d{1,3})(\.\d+){0,1}%( \/ (\d{1,3})(\.\d+){0,1}){0,1}\)$/;
 
-
 export const isHslForm = (color: string): boolean => {
 	return isBlank(color) ? false : HSL_REGEX.test(color);
-}
+};
 
 export const isHslaForm = (color: string): boolean => {
 	return isBlank(color) ? false : HSLA_REGEX.test(color);
-}
+};
 
 export const isInInterval = (min: number, value: number, max: number): boolean => {
-	if (typeof min !== "number") throw "(min) is not a number.";
-	if (typeof max !== "number") throw "(max) is not a number.";
-	if (typeof value !== "number") throw "(value) is not a number.";
-	if (min > max) throw "(min) is greater than (max).";
+	if (typeof min !== 'number') throw '(min) is not a number.';
+	if (typeof max !== 'number') throw '(max) is not a number.';
+	if (typeof value !== 'number') throw '(value) is not a number.';
+	if (min > max) throw '(min) is greater than (max).';
 
 	return min <= value && value <= max;
-}
+};
 
 export const isBlank = (value: string): boolean => {
 	return !isString(value) || isEmpty(value.trim());
-}
+};
 
 export const isString = (o: unknown): boolean => {
-	return (typeof o === "string");
-}
+	return typeof o === 'string';
+};
 
 export const isEmpty = (value: string): boolean => {
 	return !isString(value) || value.length === 0;
-}
+};
 
 export const hslToRgb = (h: number, s: number, l: number): [number, number, number] => {
 	// Must be fractions of 1
@@ -293,40 +292,39 @@ export const hslToRgb = (h: number, s: number, l: number): [number, number, numb
 	b = Math.round((b + m) * 255);
 
 	return [r, g, b];
-}
+};
 
 export const extractDataFromRGB = (color: string): number[] => {
 	if (isRgbaForm(color)) {
 		return color
 			.slice(5, -1)
-			.split(",")
+			.split(',')
 			.map((i) => parseFloat(i.trim()));
 	}
 
 	if (isRgbForm(color)) {
 		return color
 			.slice(4, -1)
-			.split(",")
+			.split(',')
 			.map((i) => parseFloat(i.trim()));
 	}
 
-	throw "(color) is not of a RGB/RGBA form.";
-}
+	throw '(color) is not of a RGB/RGBA form.';
+};
 
 export const RGBA_REGEX =
 	/^rgba\((\d{1,3})(\.\d+){0,1},( ){0,1}(\d{1,3})(\.\d+){0,1},( ){0,1}(\d{1,3})(\.\d+){0,1}(,( ){0,1}(\d{1})(\.\d+){0,1}){0,1}\)$/;
 
-
 export const isRgbaForm = (color: string): boolean => {
 	return isBlank(color) ? false : RGBA_REGEX.test(color);
-}
+};
 
 export const RGB_REGEX =
 	/^rgb\((\d{1,3})(\.\d+){0,1},( ){0,1}(\d{1,3})(\.\d+){0,1},( ){0,1}(\d{1,3})(\.\d+){0,1}\)$/;
 
 export const isRgbForm = (color: string): boolean => {
 	return isBlank(color) ? false : RGB_REGEX.test(color);
-}
+};
 
 const round = (n: number): number => {
 	return Math.round(n * 100) / 100;
@@ -373,17 +371,16 @@ export const rgbToHsl = (r: number, g: number, b: number): [number, number, numb
 	l = +(l * 100).toFixed(2);
 
 	return [round(h), round(s), round(l)];
-}
+};
 
 export const rgbToHex = (r: number, g: number, b: number, a = 1): string => {
 	const formatHex = (c: number) => {
 		const hex = Math.round(c).toString(16);
-		return hex.length == 1 ? "0" + hex : hex;
-	}
+		return hex.length == 1 ? '0' + hex : hex;
+	};
 
-	return "#" + formatHex(r) + formatHex(g) + formatHex(b) + formatHex(a * 255);
-}
-
+	return '#' + formatHex(r) + formatHex(g) + formatHex(b) + formatHex(a * 255);
+};
 
 export const isRgbColor = (color: string): boolean => {
 	if (isBlank(color)) {
@@ -411,4 +408,4 @@ export const isRgbColor = (color: string): boolean => {
 	}
 
 	return false;
-}
+};

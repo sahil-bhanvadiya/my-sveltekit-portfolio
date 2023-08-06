@@ -22,7 +22,6 @@
 		{ title: NavBar.resume, to: '/resume', icon: Icons.Resume }
 	];
 	const toggleThemeHandler = () => toggleTheme();
-	
 </script>
 
 <div class="nav-menu">
@@ -38,7 +37,7 @@
 			{#each items as item}
 				<a href={`${base}${item.to}`} class="nav-menu-item !text-[var(--secondary-text)]">
 					<Icon icon={item.icon} color="var(--secondary-text)" size="18px" />
-					<span class="nav-menu-item-label ">{item.title}</span>
+					<span class="nav-menu-item-label">{item.title}</span>
 				</a>
 			{/each}
 		</div>
