@@ -22,7 +22,7 @@
 		"@storybook/sveltekit": "^7.0.26",
 		"@storybook/testing-library": "^0.0.14-next.2",
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-vercel": "^3.0.3",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.88",
 		"@sveltejs/kit": "^1.20.4",
 		"@tsconfig/svelte": "^5.0.0",
 		"autoprefixer": "^10.4.14",
